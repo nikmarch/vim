@@ -8,10 +8,8 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   brew reinstall vim
 fi
 
-mkdir ~/.vim
-cp -R dotvim/* ~/.vim/
-
-cp vimrc ~/.vimrc
-cp vimrc.before ~/.vimrc.before
-
-cp ctags ~/.ctags
+sudo mkdir ~/.vim
+sudo cp -R vim/* ~/.vim/
+sudo cp vimrc ~/.vimrc
+sudo cp vimrc.before ~/.vimrc.before
+sudo cp ctags ~/.ctags
