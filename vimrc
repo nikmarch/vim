@@ -16,7 +16,7 @@ set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
 set showcmd                     "Show incomplete cmds down the bottom
 set showmode                    "Show current mode down the bottom
-"set gcr=a:blinkon0              "Disable cursor blink
+set gcr=a:blinkon0              "Disable cursor blink
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
 
@@ -87,7 +87,7 @@ filetype indent on
 set list listchars=tab:\ \ ,trail:·
 
 set nowrap       "Don't wrap lines
-set linebreak    "Wrap lines at convenient points
+"set linebreak    "Wrap lines at convenient points
 
 " ================ Custom Settings ========================
 
@@ -142,3 +142,10 @@ nmap =j :%!python -m json.tool<CR>
 colorscheme railscasts
 nnoremap <leader>. :CtrlPTag<cr>
 nnoremap <leader>, :!ctags -R -f ./.git/tags .<cr>
+nnoremap <leader>/ :TagbarToggle<cr>
+set relativenumber
+
+set directory^=$HOME/.vim/swapfiles//
+
+set undodir=~/.vim/undodir
+set undofile
