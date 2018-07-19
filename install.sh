@@ -13,3 +13,5 @@ sudo cp -R vim/* ~/.vim/
 sudo cp vimrc ~/.vimrc
 sudo cp vimrc.before ~/.vimrc.before
 sudo cp ctags ~/.ctags
+sudo git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
+sudo git clone https://github.com/kien/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
