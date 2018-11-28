@@ -149,3 +149,12 @@ set directory^=$HOME/.vim/swapfiles//
 
 set undodir=~/.vim/undodir
 set undofile
+
+" Autoclose bracets and stuff
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O

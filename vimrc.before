@@ -1,12 +1,3 @@
-execute pathogen#infect()
-set nu
-set runtimepath^=~/.vim/bundle/ctrlp.vim
- colorscheme railscasts
-" colorscheme blacksea
-" colorscheme cleanphp
-" colorscheme dejavu
-"cd /projects/dev-env-01/
-
 set linebreak
 set showbreak=+++
 set textwidth=100
