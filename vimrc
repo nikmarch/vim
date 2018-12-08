@@ -5,7 +5,7 @@ set nocompatible
 
 " source ~/.vimrc.before if it exists.
 if filereadable(expand("~/.vimrc.before"))
-source ~/.vimrc.before
+" source ~/.vimrc.before
 endif
 
 " ================ General Config ====================
@@ -40,15 +40,6 @@ set timeout timeoutlen=1500
 set noswapfile
 set nobackup
 set nowb
-
-" ================ Persistent Undo ==================
-" Keep undo history across sessions, by storing in file.
-" Only works all the time.
-if has('persistent_undo') && !isdirectory(expand('~').'/.vim/backups')
-silent !mkdir ~/.vim/backups > /dev/null 2>&1
-set undodir=~/.vim/backups
-set undofile
-endif
 
 " ================ Folds ============================
 
@@ -143,12 +134,23 @@ colorscheme railscasts
 nnoremap <leader>. :CtrlPTag<cr>
 nnoremap <leader>, :!ctags -R -f ./.git/tags .<cr>
 nnoremap <leader>/ :TagbarToggle<cr>
+imap ,t <Esc>:tabn<CR>
+nnoremap th  :tabfirst<CR>
+nnoremap tj  :tabnext<CR>
+nnoremap tk  :tabprev<CR>
+nnoremap tl  :tablast<CR>
+nnoremap tt  :tabedit<Space>
+nnoremap tn  :tabnext<Space>
+nnoremap tm  :tabm<Space>
+nnoremap td  :tabclose<CR>
 set relativenumber
 
 set directory^=$HOME/.vim/swapfiles//
 
-set undodir=~/.vim/undodir
+set undodir=~/.vim/backups
 set undofile
 
 " Source .bashrc files when :sh
 set shell=bash\ --login
+
+map <C-n> :NERDTreeToggle<CR>
