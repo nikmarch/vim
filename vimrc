@@ -139,7 +139,7 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 nmap =j :%!python -m json.tool<CR>
-colorscheme railscasts
+colorscheme jellybeans
 nnoremap <leader>. :CtrlPTag<cr>
 nnoremap <leader>, :!ctags -R -f ./.git/tags .<cr>
 nnoremap <leader>/ :TagbarToggle<cr>
@@ -152,3 +152,4 @@ set undofile
 
 " Source .bashrc files when :sh
 set shell=bash\ --login
+map <C-m> :TagbarToggle<CR>
