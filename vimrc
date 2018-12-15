@@ -3,11 +3,64 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" source ~/.vimrc.before if it exists.
-if filereadable(expand("~/.vimrc.before"))
-" source ~/.vimrc.before
-endif
+set textwidth=100
+set showmatch
+set visualbell
 
+"set mouse=a
+
+set hlsearch
+set smartcase
+set ignorecase
+set incsearch
+
+set autoindent
+set shiftwidth=4
+set smartindent
+set smarttab
+set softtabstop=4
+
+set tabstop=4
+set shiftwidth=4
+" set expandtab
+
+set cursorline
+hi CursorLine   cterm=NONE ctermbg=white ctermfg=white guibg=white guifg=white
+hi CursorColumn cterm=NONE ctermbg=darkgreen ctermfg=white guibg=darkred guifg=white
+nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
+map <C-n> :NERDTreeToggle<CR>
+
+augroup CursorLine
+ au!
+ au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+ au WinLeave * setlocal nocursorline
+augroup END
+" Tweaks for browsing
+let g:netrw_banner=0        " disable annoying banner
+let g:netrw_browse_split=4  " open in prior window
+let g:netrw_altv=1          " open splits to the right
+let g:netrw_liststyle=3     " tree view
+let g:netrw_list_hide=netrw_gitignore#Hide()
+let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
+
+" TAG JUMPING:
+
+" Create the `tags` file (may need to install ctags first)
+command! MakeTags !ctags -R .
+
+" Display all matching files when we tab complete
+set wildmenu
+
+" enable syntax and plugins (for netrw)
+syntax enable
+filetype plugin on
+
+
+" FINDING FILES:
+
+" Search down into subfolders
+" Provides tab-completion for all file-related tasks
+set path+=**
 " ================ General Config ====================
 
 execute pathogen#infect()
