@@ -1,4 +1,5 @@
 #!/bin/bash
+fhsjdfh
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   sudo apt-get update
@@ -11,9 +12,9 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 echo "Breeeeewwwww"
 fi
 
+cp -R vim ~/.vim
 mkdir -p ~/.vim/backups
 cp vimrc ~/.vimrc
-cp -R  vim ~/.vim
 
 # install plugins
 git clone https://github.com/kien/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
@@ -23,7 +24,7 @@ git clone git://github.com/godlygeek/tabular.git ~/.vim/bundle/tabular
 git clone https://github.com/vim-airline/vim-airline.git ~/.vim/bundle/vim-airline
 git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-airline-themes
 git clone https://github.com/majutsushi/tagbar.git ~/.vim/bundle/tagbar
-git clone git clone git://github.com/tpope/vim-endwise.git ~/.vim/bundle/vim-endwise
+git clone git://github.com/tpope/vim-endwise.git ~/.vim/bundle/vim-endwise
 git clone https://github.com/tpope/vim-fugitive.git ~/.vim/bundle/vim-fugitive
 # vim -u NONE -c "helptags vim-fugitive/doc" -c q
 git clone https://tpope.io/vim/sensible.git ~/.vim/bundle/sensible
