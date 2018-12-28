@@ -3,11 +3,64 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" source ~/.vimrc.before if it exists.
-if filereadable(expand("~/.vimrc.before"))
-source ~/.vimrc.before
-endif
+set textwidth=100
+set showmatch
+set visualbell
 
+"set mouse=a
+
+set hlsearch
+set smartcase
+set ignorecase
+set incsearch
+
+set autoindent
+set shiftwidth=4
+set smartindent
+set smarttab
+set softtabstop=4
+
+set tabstop=4
+set shiftwidth=4
+" set expandtab
+
+set cursorline
+hi CursorLine   cterm=NONE ctermbg=white ctermfg=white guibg=white guifg=white
+hi CursorColumn cterm=NONE ctermbg=darkgreen ctermfg=white guibg=darkred guifg=white
+nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
+map <C-n> :NERDTreeToggle<CR>
+
+augroup CursorLine
+ au!
+ au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+ au WinLeave * setlocal nocursorline
+augroup END
+" Tweaks for browsing
+let g:netrw_banner=0        " disable annoying banner
+let g:netrw_browse_split=4  " open in prior window
+let g:netrw_altv=1          " open splits to the right
+let g:netrw_liststyle=3     " tree view
+let g:netrw_list_hide=netrw_gitignore#Hide()
+let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
+
+" TAG JUMPING:
+
+" Create the `tags` file (may need to install ctags first)
+command! MakeTags !ctags -R .
+
+" Display all matching files when we tab complete
+set wildmenu
+
+" enable syntax and plugins (for netrw)
+syntax enable
+filetype plugin on
+
+
+" FINDING FILES:
+
+" Search down into subfolders
+" Provides tab-completion for all file-related tasks
+set path+=**
 " ================ General Config ====================
 
 execute pathogen#infect()
@@ -40,15 +93,6 @@ set timeout timeoutlen=1500
 set noswapfile
 set nobackup
 set nowb
-
-" ================ Persistent Undo ==================
-" Keep undo history across sessions, by storing in file.
-" Only works all the time.
-if has('persistent_undo') && !isdirectory(expand('~').'/.vim/backups')
-silent !mkdir ~/.vim/backups > /dev/null 2>&1
-set undodir=~/.vim/backups
-set undofile
-endif
 
 " ================ Folds ============================
 
@@ -143,13 +187,23 @@ colorscheme jellybeans
 nnoremap <leader>. :CtrlPTag<cr>
 nnoremap <leader>, :!ctags -R -f ./.git/tags .<cr>
 nnoremap <leader>/ :TagbarToggle<cr>
+imap ,t <Esc>:tabn<CR>
+nnoremap th  :tabfirst<CR>
+nnoremap tj  :tabnext<CR>
+nnoremap tk  :tabprev<CR>
+nnoremap tl  :tablast<CR>
+nnoremap tt  :tabedit<Space>
+nnoremap tn  :tabnext<Space>
+nnoremap tm  :tabm<Space>
+nnoremap td  :tabclose<CR>
 set relativenumber
 
 set directory^=$HOME/.vim/swapfiles//
 
-set undodir=~/.vim/undodir
+set undodir=~/.vim/backups
 set undofile
 
 " Source .bashrc files when :sh
 set shell=bash\ --login
+
 map <C-m> :TagbarToggle<CR>
