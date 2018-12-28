@@ -6,10 +6,9 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
   sudo apt-get install exuberant-ctags
   sudo apt-get install vim
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-#  brew update
-#  brew reinstall ctags
-#  brew reinstall vim
-echo "Breeeeewwwww"
+  brew update
+  brew reinstall ctags
+  brew reinstall vim
 fi
 
 cp -R vim ~/.vim
