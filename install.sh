@@ -30,7 +30,11 @@ git clone https://tpope.io/vim/sensible.git ~/.vim/bundle/sensible
 mkdir -p ~/.vim/pack/tpope/start
 cd ~/.vim/pack/tpope/start
 git clone https://tpope.io/vim/dispatch.git
+git clone https://tpope.io/vim/surround.git
+git clone https://tpope.io/vim/sensible.git
 # vim -u NONE -c "helptags dispatch/doc" -c q
+# vim -u NONE -c "helptags surround/doc" -c q
+# vim -u NONE -c "helptags sensible/doc" -c q
 cd -
 git clone https://github.com/tpope/vim-rails.git ~/.vim/bundle/vim-rails
 # vim -u NONE -c "helptags vim-rails/doc" -c q

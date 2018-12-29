@@ -175,3 +175,7 @@ set undofile
 
 " Source .bashrc files when :sh
 set shell=bash\ --login
+
+" Add new lines in normal mode
+nmap <CR><CR> O<ESC>j
+nmap <CR> o<Esc>k
