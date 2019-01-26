@@ -156,7 +156,7 @@ nmap =j :%!python -m json.tool<CR>
 colorscheme jellybeans
 nnoremap <leader>. :CtrlPTag<cr>
 nnoremap <leader>r :!ctags -R -f ./.git/tags .<cr>
-nnoremap <leader>j :!jsctags -o tags server test admin<cr>
+nnoremap <leader>j :!find . -type f -iregex ".*\.js$" -not -path "./node_modules/*" -exec jsctags {} -f \; \| sed '/^$/d' \| LANG=C sort > tags<cr>
 nnoremap <leader>/ :TagbarToggle<cr>
 imap ,t <Esc>:tabn<CR>
 nnoremap th  :tabfirst<CR>
