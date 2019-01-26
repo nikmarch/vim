@@ -8,6 +8,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   brew update
   brew reinstall ctags
   brew reinstall vim
+  npm install -g git+https://github.com/ramitos/jsctags.git
 fi
 
 cp -R vim ~/.vim
@@ -38,3 +39,4 @@ git clone https://tpope.io/vim/sensible.git
 cd -
 git clone https://github.com/tpope/vim-rails.git ~/.vim/bundle/vim-rails
 # vim -u NONE -c "helptags vim-rails/doc" -c q
+git clone https://github.com/moll/vim-node.git ~/.vim/bundle/node

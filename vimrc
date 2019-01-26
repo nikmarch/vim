@@ -46,7 +46,7 @@ let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 " TAG JUMPING:
 
 " Create the `tags` file (may need to install ctags first)
-command! MakeTags !ctags -R .
+" command! MakeTags !ctags -R .
 
 " Display all matching files when we tab complete
 set wildmenu
@@ -155,7 +155,8 @@ map <C-l> <C-W>l
 nmap =j :%!python -m json.tool<CR>
 colorscheme jellybeans
 nnoremap <leader>. :CtrlPTag<cr>
-nnoremap <leader>, :!ctags -R -f ./.git/tags .<cr>
+nnoremap <leader>r :!ctags -R -f ./.git/tags .<cr>
+nnoremap <leader>j :!jsctags -o tags server test admin<cr>
 nnoremap <leader>/ :TagbarToggle<cr>
 imap ,t <Esc>:tabn<CR>
 nnoremap th  :tabfirst<CR>
