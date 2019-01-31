@@ -4,5 +4,6 @@
 ```
 ### Remove old vim
 ```sh
-rm-rf ~/.vim*
+brew uninstall vim
+rm -rf ~/.vim*
 ```
