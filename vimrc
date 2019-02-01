@@ -5,24 +5,8 @@ set nocompatible
 
 set textwidth=100
 set showmatch
-set visualbell
 
 "set mouse=a
-
-set hlsearch
-set smartcase
-set ignorecase
-set incsearch
-
-set autoindent
-set shiftwidth=4
-set smartindent
-set smarttab
-set softtabstop=4
-
-set tabstop=4
-set shiftwidth=4
-" set expandtab
 
 set cursorline
 hi CursorLine   cterm=NONE ctermbg=white ctermfg=white guibg=white guifg=white
@@ -77,9 +61,6 @@ set autoread                    "Reload files changed outside vim
 " exist in the background without being in a window.
 " http://items.sjbach.com/319/configuring-vim-right
 set hidden
-
-"turn on syntax highlighting
-syntax on
 
 " Change leader to a comma because the backslash is too far away
 " That means all \x commands turn into ,x
