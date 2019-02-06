@@ -26,8 +26,6 @@ git clone https://github.com/majutsushi/tagbar.git ~/.vim/bundle/tagbar
 git clone git://github.com/tpope/vim-endwise.git ~/.vim/bundle/vim-endwise
 git clone https://github.com/tpope/vim-fugitive.git ~/.vim/bundle/vim-fugitive
 # vim -u NONE -c "helptags vim-fugitive/doc" -c q
-git clone https://tpope.io/vim/sensible.git ~/.vim/bundle/sensible
-# vim -u NONE -c "helptags sensible/doc" -c q
 mkdir -p ~/.vim/pack/tpope/start
 cd ~/.vim/pack/tpope/start
 git clone https://tpope.io/vim/dispatch.git
