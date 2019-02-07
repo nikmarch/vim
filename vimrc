@@ -20,12 +20,12 @@ augroup CursorLine
  au WinLeave * setlocal nocursorline
 augroup END
 " Tweaks for browsing
-let g:netrw_banner=0        " disable annoying banner
-let g:netrw_browse_split=4  " open in prior window
-let g:netrw_altv=1          " open splits to the right
-let g:netrw_liststyle=3     " tree view
-let g:netrw_list_hide=netrw_gitignore#Hide()
-let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
+" "let g:netrw_banner=0        " disable annoying banner
+" "let g:netrw_browse_split=4  " open in prior window
+" "let g:netrw_altv=1          " open splits to the right
+" "let g:netrw_liststyle=3     " tree view
+" "let g:netrw_list_hide=netrw_gitignore#Hide()
+" "let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
 " TAG JUMPING:
 
@@ -137,7 +137,7 @@ nmap =j :%!python -m json.tool<CR>
 colorscheme jellybeans
 nnoremap <leader>. :CtrlPTag<cr>
 nnoremap <leader>r :!ctags -R -f ./.git/tags .<cr>
-nnoremap <leader>j :!find . -type f -iregex ".*\.js$" -not -path "./node_modules/*" -exec jsctags {} -f \; \| sed '/^$/d' \| LANG=C sort > tags<cr>
+nnoremap <leader>j :!find . -type f -iregex ".*\.js$" -not -path "./node_modules/*" -exec jsctags {} -f \; \| sed '/^$/d' \| LANG=C sort > ./.git/tags<cr>
 nnoremap <leader>/ :TagbarToggle<cr>
 imap ,t <Esc>:tabn<CR>
 nnoremap th  :tabfirst<CR>
@@ -150,10 +150,10 @@ nnoremap tm  :tabm<Space>
 nnoremap td  :tabclose<CR>
 set relativenumber
 
-set directory^=$HOME/.vim/swapfiles//
+set directory^=$HOME/.vim/swapfiles/
 
-set undodir=~/.vim/backups
 set undofile
+set undodir=~/.vim/backups
 
 " Source .bashrc files when :sh
 set shell=bash\ --login

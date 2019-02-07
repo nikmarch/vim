@@ -35,6 +35,6 @@ git clone https://tpope.io/vim/sensible.git
 # vim -u NONE -c "helptags surround/doc" -c q
 # vim -u NONE -c "helptags sensible/doc" -c q
 cd -
-git clone https://github.com/tpope/vim-rails.git ~/.vim/bundle/vim-rails
+# git clone https://github.com/tpope/vim-rails.git ~/.vim/bundle/vim-rails
 # vim -u NONE -c "helptags vim-rails/doc" -c q
 git clone https://github.com/moll/vim-node.git ~/.vim/bundle/node
