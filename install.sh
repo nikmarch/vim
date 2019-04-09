@@ -14,7 +14,6 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 cp -R vim ~/.vim
-cp tmux.conf ~/.tmux.conf
 mkdir -p ~/.vim/backups
 cp vimrc ~/.vimrc
 
@@ -40,3 +39,9 @@ cd -
 # git clone https://github.com/tpope/vim-rails.git ~/.vim/bundle/vim-rails
 # vim -u NONE -c "helptags vim-rails/doc" -c q
 git clone https://github.com/moll/vim-node.git ~/.vim/bundle/node
+# Tmux section
+cd
+git clone https://github.com/gpakosz/.tmux.git
+ln -s -f .tmux/.tmux.conf
+cd -
+cp tmux.conf ~/.tmux.conf.local
