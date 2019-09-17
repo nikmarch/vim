@@ -39,6 +39,12 @@ cd -
 # git clone https://github.com/tpope/vim-rails.git ~/.vim/bundle/vim-rails
 # vim -u NONE -c "helptags vim-rails/doc" -c q
 git clone https://github.com/moll/vim-node.git ~/.vim/bundle/node
+git clone https://github.com/mxw/vim-jsx.git ~/.vim/bundle/vim-jsx
+git clone https://github.com/jparise/vim-graphql.git ~/.vim/bundle/vim-graphql
+git clone https://github.com/pangloss/vim-javascript.git ~/.vim/bundle/vim-javascript
+mkdir -p ~/.vim/pack/coc/start
+cd ~/.vim/pack/coc/start
+curl --fail -L https://github.com/neoclide/coc.nvim/archive/release.tar.gz|tar xzfv -
 # Tmux section
 cd
 git clone https://github.com/gpakosz/.tmux.git
