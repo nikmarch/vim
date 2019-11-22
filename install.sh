@@ -26,6 +26,7 @@ git clone https://github.com/vim-airline/vim-airline.git ~/.vim/bundle/vim-airli
 git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-airline-themes
 git clone git://github.com/tpope/vim-endwise.git ~/.vim/bundle/vim-endwise
 git clone https://github.com/tpope/vim-fugitive.git ~/.vim/bundle/vim-fugitive
+git clone https://github.com/tpope/vim-rhubarb.git ~/.vim/bundle/vim-rhubarb
 # vim -u NONE -c "helptags vim-fugitive/doc" -c q
 mkdir -p ~/.vim/pack/tpope/start
 cd ~/.vim/pack/tpope/start
