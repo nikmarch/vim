@@ -13,6 +13,7 @@ hi CursorLine   cterm=NONE ctermbg=white ctermfg=white guibg=white guifg=white
 hi CursorColumn cterm=NONE ctermbg=darkgreen ctermfg=white guibg=darkred guifg=white
 nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 map <C-n> :NERDTreeToggle<CR>
+map <C-f> :NERDTreeFind<CR>
 
 augroup CursorLine
  au!
