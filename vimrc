@@ -13,6 +13,7 @@ hi CursorLine   cterm=NONE ctermbg=white ctermfg=white guibg=white guifg=white
 hi CursorColumn cterm=NONE ctermbg=darkgreen ctermfg=white guibg=darkred guifg=white
 nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 map <C-n> :NERDTreeToggle<CR>
+map <C-f> :NERDTreeFind<CR>
 
 augroup CursorLine
  au!
@@ -136,7 +137,8 @@ map <C-l> <C-W>l
 nmap =j :%!python -m json.tool<CR>
 colorscheme jellybeans
 nnoremap <leader>. :CtrlPTag<cr>
-nnoremap <leader>r :!ctags -R -f ./.git/tags .<cr>
+nnoremap <leader>r :!ctags -R -f ./.tags .<cr>
+set tags=.tags;/
 nnoremap <leader>j :!find . -type f -iregex ".*\.js$" -not -path "./node_modules/*" -exec jsctags {} -f \; \| sed '/^$/d' \| LANG=C sort > ./.git/tags<cr>
 imap ,t <Esc>:tabn<CR>
 nnoremap th  :tabfirst<CR>
@@ -155,7 +157,7 @@ set undofile
 set undodir=~/.vim/backups
 
 " Source .bashrc files when :sh
-set shell=bash\ --login
+set shell=zsh\ --login
 
 " Add new lines in normal mode
 nmap <CR><CR> O<ESC>j
