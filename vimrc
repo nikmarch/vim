@@ -8,17 +8,8 @@ set showmatch
 
 "set mouse=a
 
-set cursorline
-hi CursorLine   cterm=NONE ctermbg=white ctermfg=white guibg=white guifg=white
-hi CursorColumn cterm=NONE ctermbg=darkgreen ctermfg=white guibg=darkred guifg=white
-map <C-n> :NERDTreeToggle<CR>
-map <C-f> :NERDTreeFind<CR>
+"set cursorline
 
-augroup CursorLine
- au!
- au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
- au WinLeave * setlocal nocursorline
-augroup END
 " Tweaks for browsing
 " "let g:netrw_banner=0        " disable annoying banner
 " "let g:netrw_browse_split=4  " open in prior window
@@ -134,7 +125,8 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 nmap =j :%!python -m json.tool<CR>
-colorscheme jellybeans
+"colorscheme jellybeans
+colorscheme railscasts
 nnoremap <leader>. :CtrlPTag<cr>
 nnoremap <leader>r :!ctags -R -f ./.tags .<cr>
 set tags=.tags;/

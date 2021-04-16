@@ -9,7 +9,7 @@ cp vimrc ~/.vimrc
 
 # install plugins
 git clone https://github.com/kien/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
-git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
+#git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
 git clone https://github.com/ervandew/supertab.git ~/.vim/bundle/supertab
 git clone git://github.com/godlygeek/tabular.git ~/.vim/bundle/tabular
 git clone https://github.com/vim-airline/vim-airline.git ~/.vim/bundle/vim-airline
@@ -31,7 +31,7 @@ cd -
 # vim -u NONE -c "helptags vim-rails/doc" -c q
 git clone https://github.com/moll/vim-node.git ~/.vim/bundle/node
 git clone https://github.com/mxw/vim-jsx.git ~/.vim/bundle/vim-jsx
-git clone https://github.com/jparise/vim-graphql.git ~/.vim/bundle/vim-graphql
+# git clone https://github.com/jparise/vim-graphql.git ~/.vim/bundle/vim-graphql
 git clone https://github.com/pangloss/vim-javascript.git ~/.vim/bundle/vim-javascript
 mkdir -p ~/.vim/pack/coc/start
 cd ~/.vim/pack/coc/start
