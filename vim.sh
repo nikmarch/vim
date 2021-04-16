@@ -25,6 +25,7 @@ cd ~/.vim/pack/tpope/start
 git clone https://tpope.io/vim/surround.git
 git clone https://tpope.io/vim/sensible.git
 git clone https://tpope.io/vim/commentary.git
+git clone https://github.com/tpope/vim-vinegar.git
 # vim -u NONE -c "helptags dispatch/doc" -c q
 # vim -u NONE -c "helptags surround/doc" -c q
 # vim -u NONE -c "helptags sensible/doc" -c q
