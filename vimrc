@@ -117,7 +117,6 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](\.git|node_modules)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ }
-set colorcolumn=120
 autocmd BufWritePre * :%s/\s\+$//e
 map <C-j> <C-W>j
 map <C-k> <C-W>k
