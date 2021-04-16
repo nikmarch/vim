@@ -2,20 +2,11 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-set textwidth=100
+" set textwidth=100
 set showmatch
 
 " set mouse=a
-
 set cursorline
-
-" Tweaks for browsing
-" "let g:netrw_banner=0        " disable annoying banner
-" "let g:netrw_browse_split=4  " open in prior window
-" "let g:netrw_altv=1          " open splits to the right
-" "let g:netrw_liststyle=3     " tree view
-" "let g:netrw_list_hide=netrw_gitignore#Hide()
-" "let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
 " TAG JUMPING:
 
@@ -64,8 +55,8 @@ set nowb
 
 " ================ Folds ============================
 
-set foldmethod=manual   "fold based on indent
-"
+set foldmethod=manual
+
 " ================ Scrolling ========================
 
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
