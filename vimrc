@@ -38,14 +38,11 @@ set path+=**
 " ================ General Config ====================
 
 execute pathogen#infect()
-set number "Line numbers are good
-set backspace=indent,eol,start  "Allow backspace in insert mode
-set history=1000                "Store lots of :cmdline history
+set number                      "Line numbers are good
 set showcmd                     "Show incomplete cmds down the bottom
 set showmode                    "Show current mode down the bottom
 set gcr=a:blinkon0              "Disable cursor blink
 set visualbell                  "No sounds
-set autoread                    "Reload files changed outside vim
 
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
@@ -67,10 +64,7 @@ set nowb
 
 " ================ Folds ============================
 
-set foldmethod=indent   "fold based on indent
-set foldnestmax=3       "deepest fold is 3 levels
-set nofoldenable        "dont fold by default
-
+set foldmethod=manual   "fold based on indent
 "
 " ================ Scrolling ========================
 
@@ -87,7 +81,6 @@ set smartcase       " ...unless we type a capital
 
 " ================ Indentation ======================
 
-set autoindent
 set smartindent
 set smarttab
 set shiftwidth=2
@@ -129,7 +122,7 @@ nnoremap <leader>. :CtrlPTag<cr>
 nnoremap <leader>r :!ctags -R -f ./.tags .<cr>
 set tags=.tags;/
 nnoremap <leader>j :!find . -type f -iregex ".*\.js$" -not -path "./node_modules/*" -exec jsctags {} -f \; \| sed '/^$/d' \| LANG=C sort > ./.tags<cr>
-set relativenumber
+" set relativenumber
 
 set directory^=$HOME/.vim/swapfiles/
 
@@ -158,3 +151,9 @@ nnoremap <leader>f :CtrlP<cr>
 nnoremap <leader>d :CtrlP %:h<cr>
 nnoremap <leader>s :CtrlPBuffer<cr>
 nnoremap <leader><leader> <c-^>
+
+" terminal"
+cabbrev bterm bo term
+set termwinsize=10x0
+nnoremap <leader>t :bo term<cr>
+" use C-z and fg"
