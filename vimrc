@@ -1,4 +1,3 @@
-
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
@@ -6,20 +5,10 @@ set nocompatible
 set textwidth=100
 set showmatch
 
-"set mouse=a
+" set mouse=a
 
 set cursorline
-hi CursorLine   cterm=NONE ctermbg=white ctermfg=white guibg=white guifg=white
-hi CursorColumn cterm=NONE ctermbg=darkgreen ctermfg=white guibg=darkred guifg=white
-nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
-map <C-n> :NERDTreeToggle<CR>
-map <C-f> :NERDTreeFind<CR>
 
-augroup CursorLine
- au!
- au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
- au WinLeave * setlocal nocursorline
-augroup END
 " Tweaks for browsing
 " "let g:netrw_banner=0        " disable annoying banner
 " "let g:netrw_browse_split=4  " open in prior window
@@ -128,27 +117,18 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](\.git|node_modules)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ }
-set colorcolumn=120
 autocmd BufWritePre * :%s/\s\+$//e
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 nmap =j :%!python -m json.tool<CR>
-colorscheme jellybeans
+"colorscheme jellybeans
+colorscheme railscasts
 nnoremap <leader>. :CtrlPTag<cr>
 nnoremap <leader>r :!ctags -R -f ./.tags .<cr>
 set tags=.tags;/
-nnoremap <leader>j :!find . -type f -iregex ".*\.js$" -not -path "./node_modules/*" -exec jsctags {} -f \; \| sed '/^$/d' \| LANG=C sort > ./.git/tags<cr>
-imap ,t <Esc>:tabn<CR>
-nnoremap th  :tabfirst<CR>
-nnoremap tj  :tabnext<CR>
-nnoremap tk  :tabprev<CR>
-nnoremap tl  :tablast<CR>
-nnoremap tt  :tabedit<Space>
-nnoremap tn  :tabnext<Space>
-nnoremap tm  :tabm<Space>
-nnoremap td  :tabclose<CR>
+nnoremap <leader>j :!find . -type f -iregex ".*\.js$" -not -path "./node_modules/*" -exec jsctags {} -f \; \| sed '/^$/d' \| LANG=C sort > ./.tags<cr>
 set relativenumber
 
 set directory^=$HOME/.vim/swapfiles/
@@ -156,9 +136,25 @@ set directory^=$HOME/.vim/swapfiles/
 set undofile
 set undodir=~/.vim/backups
 
-" Source .bashrc files when :sh
+" Source .zsh files when :sh
 set shell=zsh\ --login
 
 " Add new lines in normal mode
 nmap <CR><CR> O<ESC>j
 nmap <CR> o<Esc>k
+" Gary Bernhardt's vimrc
+" Current directory
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+
+set winwidth=84
+" We have to have a winheight bigger than we want to set winminheight. But if
+" we set winheight to be huge before winminheight, the winminheight set will
+" fail.
+set winheight=5
+set winminheight=5
+set winheight=999
+
+nnoremap <leader>f :CtrlP<cr>
+nnoremap <leader>d :CtrlP %:h<cr>
+nnoremap <leader>s :CtrlPBuffer<cr>
+nnoremap <leader><leader> <c-^>
