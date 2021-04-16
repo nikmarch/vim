@@ -1,4 +1,3 @@
-
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
@@ -6,9 +5,9 @@ set nocompatible
 set textwidth=100
 set showmatch
 
-"set mouse=a
+" set mouse=a
 
-"set cursorline
+set cursorline
 
 " Tweaks for browsing
 " "let g:netrw_banner=0        " disable annoying banner
@@ -159,3 +158,4 @@ set winheight=999
 nnoremap <leader>f :CtrlP<cr>
 nnoremap <leader>d :CtrlP %:h<cr>
 nnoremap <leader>s :CtrlPBuffer<cr>
+nnoremap <leader><leader> <c-^>
