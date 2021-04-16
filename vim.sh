@@ -1,9 +1,11 @@
 #!/bin/bash
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-cp -R vim ~/.vim
+cp -R vim/plugin ~/.vim/
+cp -R vim/colors ~/.vim/
 mkdir -p ~/.vim/backups
 cp vimrc ~/.vimrc
 
