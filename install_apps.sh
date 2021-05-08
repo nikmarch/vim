@@ -11,4 +11,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   brew reinstall vim
   npm install -g git+https://github.com/ramitos/jsctags.git
   brew install tmux
+  brew install fd
+  brew install selecta
+  brew install ag
 fi
