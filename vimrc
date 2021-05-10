@@ -146,7 +146,7 @@ nnoremap <leader><leader> <c-^>
 " terminal"
 cabbrev bterm bo term
 set termwinsize=10x0
-nnoremap <leader>t :bo term<cr>
+"nnoremap <leader>t :bo term<cr>
 " use C-z and fg"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
