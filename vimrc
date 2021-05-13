@@ -115,8 +115,8 @@ nnoremap =j :%!python -m json.tool<CR>
 colorscheme railscasts
 
 " nnoremap <leader>. :CtrlPTag<cr>
-nnoremap <leader>r :!ctags -R -f ./.tags .<cr>
-set tags=.tags;/
+" nnoremap <leader>r :!ctags -R -f ./.tags .<cr>
+" set tags=.tags;/
 " nnoremap <leader>j :!find . -type f -iregex ".*\.js$" -not -path "./node_modules/*" -exec jsctags {} -f \; \| sed '/^$/d' \| LANG=C sort > ./.tags<cr>
 " set relativenumber
 
@@ -218,10 +218,10 @@ function! SelectaFile(path, glob, command)
   call SelectaCommand("fd -t f . " . a:path, "", a:command)
 endfunction
 
-function! SelectaFileContents()
+function! SelectaFileContents(ext)
   try
     "let selection = SelectaOutput("ls src/**/*.ts* | while read fn; do nl -b a \"$fn\" | while read line; do echo \"$fn:$line\"; done; done", "| cut -d \"	\" -f 1")
-    let selection = SelectaOutput("ls **/*.rb | while read fn; do nl -b a \"$fn\" | while read line; do echo \"$fn:$line\"; done; done", "| cut -d \"	\" -f 1")
+    let selection = SelectaOutput("ls **/*.".a:ext." | while read fn; do nl -b a \"$fn\" | while read line; do echo \"$fn:$line\"; done; done", "| cut -d \"	\" -f 1")
   catch /Vim:Interrupt/
     " Swallow the ^C so that the redraw below happens; otherwise there will be
     " leftovers from selecta on the screen
@@ -232,7 +232,9 @@ function! SelectaFileContents()
 endfunction
 
 nnoremap <leader>f :call SelectaFile(".", "*", ":e")<cr>
-nnoremap <leader>F :call SelectaFileContents()<cr>
+nnoremap <leader>rb :call SelectaFileContents("rb")<cr>
+nnoremap <leader>js :call SelectaFileContents("js")<cr>
+nnoremap <leader>ts :call SelectaFileContents("ts")<cr>
 nnoremap <leader>gv :call SelectaFile("app/views", "*", ":edit")<cr>
 nnoremap <leader>gc :call SelectaFile("app/controllers", "*", ":edit")<cr>
 nnoremap <leader>gm :call SelectaFile("app/models", "*", ":edit")<cr>
