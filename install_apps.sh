@@ -14,4 +14,6 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   brew install fd
   brew install selecta
   brew install ag
+  # fix tmux in IOS
+  brew install reattach-to-user-namespace
 fi
