@@ -40,11 +40,3 @@ mkdir -p ~/.vim/pack/coc/start
 cd ~/.vim/pack/coc/start
 curl --fail -L https://github.com/neoclide/coc.nvim/archive/release.tar.gz|tar xzfv -
 cd -
-# Tmux section
-cd
-rm -rf .tmux*
-git clone https://github.com/gpakosz/.tmux.git
-ln -s -f .tmux/.tmux.conf
-cd -
-cp tmux.conf ~/.tmux.conf.local
-cp ctags ~/.ctags
