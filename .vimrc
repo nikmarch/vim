@@ -262,3 +262,4 @@ nnoremap g1 :ALEFirst<cr>
 " show type errors that don't actually exist. I don't know exactly why that
 " happens yet, but I think that it's related to renaming files.
 nnoremap g0 :ALEStopAllLSPs<cr>
+nnoremap <leader><space> :nohlsearch<cr>
