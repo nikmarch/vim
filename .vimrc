@@ -109,8 +109,6 @@ nnoremap <C-l> <C-W>l
 " ctr c instead of escape
 inoremap <c-c> <esc>
 
-nnoremap =j :%!python -m json.tool<CR>
-
 "colorscheme jellybeans
 colorscheme railscasts
 
