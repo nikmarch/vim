@@ -261,3 +261,6 @@ nnoremap g1 :ALEFirst<cr>
 " happens yet, but I think that it's related to renaming files.
 nnoremap g0 :ALEStopAllLSPs<cr>
 nnoremap <leader><space> :nohlsearch<cr>
+
+nnoremap cd /\%<C-R>=virtcol(".")<CR>v\S<CR>
+nnoremap cu ?\%<C-R>=virtcol(".")<CR>v\S<CR>
