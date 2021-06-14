@@ -10,7 +10,7 @@ mkdir -p ~/.vim/backups
 cp vimrc ~/.vimrc
 
 # install plugins
-git clone https://github.com/kien/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
+# git clone https://github.com/kien/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
 #git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
 git clone https://github.com/ervandew/supertab.git ~/.vim/bundle/supertab
 git clone git://github.com/godlygeek/tabular.git ~/.vim/bundle/tabular
@@ -40,3 +40,4 @@ mkdir -p ~/.vim/pack/coc/start
 cd ~/.vim/pack/coc/start
 curl --fail -L https://github.com/neoclide/coc.nvim/archive/release.tar.gz|tar xzfv -
 cd -
+
